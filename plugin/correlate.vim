@@ -1,6 +1,6 @@
  
 
-function! correlate#SExpand(input,col) abort
+function! SExpand(input,col) 
 	if len(a:input) == a:col
 		let forSimpleExpand=a:input[0:a:col]	
 	else
@@ -67,13 +67,13 @@ function! Part(line)
 	while cont>-1
 		let c = strpart(a:line, cont, 1)
 		let result=result.c
-		if !IsNumberOrComa(c)
+		if !s:IsNumberOrComa(c)
 			break
 		endif
 		let cont=cont-1	
 	endwhile
 	let result=join(reverse(split(result, '.\zs')), '')
-	if  IsNumberOrComa(result[0])
+	if  s:IsNumberOrComa(result[0])
 		return result
 	else
 		return result[1:]
