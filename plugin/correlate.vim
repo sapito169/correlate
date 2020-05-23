@@ -67,13 +67,13 @@ function! Part(line)
 	while cont>-1
 		let c = strpart(a:line, cont, 1)
 		let result=result.c
-		if !s:IsNumberOrComa(c)
+		if !IsNumberOrComa(c)
 			break
 		endif
 		let cont=cont-1	
 	endwhile
 	let result=join(reverse(split(result, '.\zs')), '')
-	if  s:IsNumberOrComa(result[0])
+	if  IsNumberOrComa(result[0])
 		return result
 	else
 		return result[1:]
