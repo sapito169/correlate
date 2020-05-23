@@ -1,4 +1,4 @@
- 
+sorry this is not working now  
 
 this plugin allows u to autocompleate consecutive numbers in insertmode
 
